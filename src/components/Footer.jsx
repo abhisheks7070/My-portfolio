@@ -3,7 +3,7 @@ import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="text-white text-xl bg-slate-900 p-4 mt-auto">
+    <footer className="text-white text-l md:text-xl bg-slate-700 p-4 mt-auto">
       <div className="container mx-auto text-center">
       <div className="flex justify-center gap-4 p-4 mb-4 bg-gray-300 rounded-full w-fit mx-auto">
                 <a href="https://www.linkedin.com/in/abhishek-singh-64a45b128" target="_blank" rel="noopener noreferrer">

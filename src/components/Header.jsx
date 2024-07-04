@@ -30,17 +30,19 @@ const Header = () => {
 
   return (
     <>
-      <ul className={`transition-all duration-500 ${showNavbar ? 'display-block' : 'hidden'} navbar text-black text-xl md:text-2xl font-bold gap-4 sticky top-0 z-50  flex items-start bg-gray-400 p-2 md:p-4`}>
-        <li><a href="#home" className="hover:bg-gray-500 hover:rounded-xl">Home</a></li>
-        <li><a href="#about" className="hover:bg-gray-500 hover:rounded-xl">About</a></li>
-        <li><a href="#skills" className="hover:bg-gray-500 hover:rounded-xl">Skills</a></li>
-        <li><a href="#projects" className="hover:bg-gray-500 hover:rounded-xl">Projects</a></li>
+      <ul className={`transition-all duration-500 ${showNavbar ? 'display-block' : 'hidden'} navbar text-black text-l md:text-2xl font-bold gap-2 md:gap-9 sticky top-0 z-50 flex items-start bg-gray-400 p-2 md:p-4`}>
+        <li><a href="#home" className="px-2 hover:bg-gray-500 hover:rounded-xl">Home</a></li>
+        <li><a href="#about" className="px-2 hover:bg-gray-500 hover:rounded-xl">About</a></li>
+        <li><a href="#skills" className="px-2 hover:bg-gray-500 hover:rounded-xl">Skills</a></li>
+        <li><a href="#projects" className="px-2 hover:bg-gray-500 hover:rounded-xl">Projects</a></li>
+        <li><a href="#contact" className="px-2 hover:bg-gray-500 hover:rounded-xl">Contact</a></li>
       </ul>
-      <ul className={`transition-all duration-500 ${showNavbar ? 'hidden' : 'block'} navbar text-black text-xl md:text-2xl font-bold gap-4 z-50  flex items-start bg-gray-400 p-2 md:p-4`}>
-        <li><a href="#home" className="hover:bg-gray-500 hover:rounded-xl">Home</a></li>
-        <li><a href="#about" className="hover:bg-gray-500 hover:rounded-xl">About</a></li>
-        <li><a href="#skills" className="hover:bg-gray-500 hover:rounded-xl">Skills</a></li>
-        <li><a href="#projects" className="hover:bg-gray-500 hover:rounded-xl">Projects</a></li>
+      <ul className={`transition-all duration-500 ${showNavbar ? 'hidden' : 'block'} navbar text-black text-l md:text-2xl font-bold gap-2 md:gap-9 z-50  flex items-start bg-gray-400 p-2 md:p-4`}>
+        <li><a href="#home" className="px-2 hover:bg-gray-500 hover:rounded-xl">Home</a></li>
+        <li><a href="#about" className="px-2 hover:bg-gray-500 hover:rounded-xl">About</a></li>
+        <li><a href="#skills" className="px-2 hover:bg-gray-500 hover:rounded-xl">Skills</a></li>
+        <li><a href="#projects" className="px-2 hover:bg-gray-500 hover:rounded-xl">Projects</a></li>
+        <li><a href="#contact" className="px-2 hover:bg-gray-500 hover:rounded-xl">Contact</a></li>
       </ul>
     </>
 
