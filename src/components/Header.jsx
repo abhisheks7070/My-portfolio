@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <>
-      <ul className={`transition-all duration-500 ${showNavbar ? 'display-block' : 'hidden'} navbar text-black text-2xl font-bold gap-4 sticky top-0 z-50  flex items-start bg-gray-400 p-4`}>
+      <ul className={`transition-all duration-500 ${showNavbar ? 'display-block' : 'hidden'} navbar text-black text-xl md:text-2xl font-bold gap-4 sticky top-0 z-50  flex items-start bg-gray-400 p-2 md:p-4`}>
         <li><a href="#home" className="hover:bg-gray-500 hover:rounded-xl">Home</a></li>
         <li><a href="#about" className="hover:bg-gray-500 hover:rounded-xl">About</a></li>
         <li><a href="#skills" className="hover:bg-gray-500 hover:rounded-xl">Skills</a></li>
