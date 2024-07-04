@@ -2,7 +2,7 @@
 function SkillCard({skill}) {
     return (
         <div>
-            <div className="skills-card bg-white p-5 rounded-lg shadow-2xl w-full">
+            <div className="skills-card bg-gray-300 p-5 rounded-lg shadow-2xl w-full">
                 <div className="skills-card-title py-1">
                     <h1 className="text-2xl font-bold uppercase">{skill.title}</h1>
                 </div>
