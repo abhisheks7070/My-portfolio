@@ -10,11 +10,12 @@ const projects = [
     title: "1.Insurance Website",
     desc: "This project is an insurance website built using the MERN stack (MongoDB, Express.js, React.js, Node.js). The website provides information about the insurance company and allows users to make inquiries by submitting their details. The submitted inquiries are sent to a backend created using Express.js and stored in a MongoDB database. There is also a frontend for agents that can be accessed only by entering a specific agent code.",
     features: [
+      "Provides information about the insurance company.",
       "Users can make inquiries by submitting their details through a contact form.",
       "The contact form data is sent to the backend and stored in a MongoDB database.",
-      "Agents can access this frontend by entering a specific agent code in the user frontend.",
-      "Provides additional functionalities for agents (e.g., viewing inquiries, managing user data).",
-      "Proper loading and error handling"
+      "Restricted access to Agent website.",
+      "Agent website can be accesed only by entering a specific agent code in the user website.",
+      "Provides additional functionalities for agents (e.g., viewing inquiries, managing user data)."
     ],
     img: insurance,
 
