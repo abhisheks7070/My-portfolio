@@ -44,7 +44,7 @@ const Contact = () => {
 
   return (<>
     <section id="contact" className="bg-slate-900 p-8">
-      <h2 className="head text-slate-400 text-3xl font-bold mx-auto text-center">Contact</h2>
+      <h2 className="head text-slate-300 text-3xl font-bold mx-auto text-center">Contact</h2>
       <p className="mt-4 md:mt-9 text-base md:text-xl text-center">Reach out to us for creating a website or enquires.</p>
       <form className="text-black form mt-8 max-w-xl mx-auto space-y-4" onSubmit={handleSubmit}>
         <input
@@ -88,7 +88,7 @@ const Contact = () => {
           Send Message
         </button>
       </form>
-      {statusMessage && <p className="mt-4 text-red-500">{statusMessage}</p>}
+      {statusMessage && <p className="text-center mt-4 text-red-500">{statusMessage}</p>}
 
       {/* WhatsApp Link */}
       <p className="mt-8 text-center">Prefer WhatsApp? <a href="https://api.whatsapp.com/send?phone=7021235201&text=Hello%2C%20I%20have%20a%20question%20about%20your%20services" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Chat with us on WhatsApp</a>.</p>

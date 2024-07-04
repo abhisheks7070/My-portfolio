@@ -72,7 +72,7 @@ const Projects = () => {
   return (
     <section id="projects" className="bg-slate-700 p-8">
       <div className="container mx-auto text-center">
-        <h2 className="head text-slate-900 text-3xl font-bold mb-8">My Projects</h2>
+        <h2 className="head text-slate-300 text-3xl font-bold mb-8">Projects</h2>
         <div className="relative">
           <div className="text-black text-start overflow-x-auto whitespace-nowrap flex justify-center space-x-8">
             {projects.map((project, index) => (

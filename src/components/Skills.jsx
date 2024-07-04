@@ -76,7 +76,7 @@ const skills = [
 const Skills = () => {
     return (
         <section id="skills" className="bg-slate-900 p-8 mx-auto text-center">
-            <h2 className="head text-slate-400 text-3xl font-bold">My Skills</h2>
+            <h2 className="head text-slate-300 text-3xl font-bold">Skills</h2>
             <div className='p-4 flex flex-col md:flex-row justify-between text-center items-center'>
                 <div className="m-4 skills-right-content w-full md:w-[50vw] ">
                     <Player
