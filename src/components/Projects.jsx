@@ -74,15 +74,15 @@ const Projects = () => {
       <div className="container mx-auto text-center">
         <h2 className="head text-slate-300 text-3xl font-bold mb-8">Projects</h2>
         <div className="relative">
-          <div className="text-black text-start overflow-x-auto whitespace-nowrap flex justify-center space-x-8">
+          <div className="text-black text-start overflow-x-auto whitespace-nowrap flex">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className={`mx-auto w-[70vw] h-auto pl-9 bg-gray-300 p-4 rounded-xl shadow-lg inline-block ${
+                className={`mx-auto w-[80vw] h-auto bg-gray-300 p-4 rounded-xl shadow-lg inline-block ${
                   index === currentIndex ? 'block' : 'hidden'
                 } `}
               >
-                <h3 className="mdtext-3xl text-2xl font-bold mb-5 text-center underline decoration-solid text-wrap">{project.title}</h3>
+                <h3 className="mdtext-3xl text-2xl font-bold mb-5 text-center text-wrap">{project.title}</h3>
                 <img src={project.img} alt={project.title} className="mx-auto order-solid border-4 border-black w-auto h-auto object-fill rounded-xl mb-4" />
                 <div className='text-xl md:text-2xl font-bold mb-2 text-wrap underline decoration-solid'>Description: </div>
                 <p className="text-l md:text-xl mb-5 text-wrap ">{project.desc}</p>
@@ -103,12 +103,12 @@ const Projects = () => {
               </div>
             ))}
           </div>
-          <div className="absolute top-20 transform -translate-y-1/2 left-0">
+          <div className="absolute top-[50vh] transform -translate-y-1/2 left-[-5vw]">
             <button onClick={handlePrev} className="bg-slate-800 text-white p-2 rounded-full hover:bg-slate-900">
               <FaArrowLeft />
             </button>
           </div>
-          <div className="absolute top-20 transform -translate-y-1/2 right-0">
+          <div className="absolute top-[50vh] transform -translate-y-1/2 right-[-5vw]">
             <button onClick={handleNext} className="bg-slate-800 text-white p-2 rounded-full hover:bg-slate-900">
               <FaArrowRight />
             </button>
