@@ -103,12 +103,12 @@ const Projects = () => {
               </div>
             ))}
           </div>
-          <div className="absolute top-[50vh] transform -translate-y-1/2 left-[-5vw]">
+          <div className="absolute top-1/2 transform -translate-y-1/2 left-[-5vw]">
             <button onClick={handlePrev} className="bg-slate-800 text-white p-2 rounded-full hover:bg-slate-900">
               <FaArrowLeft />
             </button>
           </div>
-          <div className="absolute top-[50vh] transform -translate-y-1/2 right-[-5vw]">
+          <div className="absolute top-1/2 transform -translate-y-1/2 right-[-5vw]">
             <button onClick={handleNext} className="bg-slate-800 text-white p-2 rounded-full hover:bg-slate-900">
               <FaArrowRight />
             </button>
