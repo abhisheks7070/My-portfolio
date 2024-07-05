@@ -11,7 +11,7 @@ const Home = () => {
                 <div className='text-slate-400 mx-auto text-center text-xl md:text-3xl font-bold'>Abhishek Singh</div>
             </div>
             <div className='md:w-[50vw]'>
-                <h1 className="text-2xl md:text-4xl font-bold mb-2 md:mb-4">WELCOME TO MY PORTFOLIO</h1>
+                <h1 className="text-2xl md:text-4xl font-bold mb-2 md:mb-4">WELCOME</h1>
                 <p className="text-xl">I am a web developer passionate about creating dynamic and engaging online experiences. With a commitment to continuous learning and a keen eye for detail, I strive to bring innovative ideas to life through clean and efficient code. Explore my work and join me on this exciting web development journey.</p>
             </div>
         </section>
