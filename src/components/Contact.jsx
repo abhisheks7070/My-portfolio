@@ -21,6 +21,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatusMessage('Your message has been sent successfully!');
     try {
       const response = await axios.post('https://ps-backend-d5jt.onrender.com/contact', formData, {
         headers: {
@@ -28,7 +29,6 @@ const Contact = () => {
         },
       });
       console.log('Success:', response.data);
-      setStatusMessage('Your message has been sent successfully!');
       // Reset the form
       setFormData({
         name: '',
