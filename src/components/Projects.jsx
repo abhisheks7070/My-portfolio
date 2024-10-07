@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import wallet from '../assets/wallet-app.png';
 import insurance from '../assets/insurance.png';
-import netflix from '../assets/netflix-clone.png';
+import Myshopee from '../assets/Myshopee.png';
 
 
 const projects = [
@@ -41,18 +41,18 @@ const projects = [
 
   },
   {
-    title: "3.Netflix-clone",
-    desc: "This project is a basic clone of the Netflix website created using HTML and CSS..",
+    title: "E-commerece Website",
+    desc: "This is a prototype full-stack e-commerce web application built using the MERN stack (MongoDB, Express, React, and Node.js) with JWT authentication for secure login and Redux for state management. The app allows users to browse products, add them to their cart, make purchases.",
     features: [
 
-      "Home page with a navigation bar, hero section, and grid layout for movie thumbnails.",
-      "Responsive design to ensure compatibility with various devices",
-      "CSS styling to mimic the appearance of Netflix's interface."
+      "User Authentication: Register, login, and manage user sessions with JWT-based authentication.",
+      "Responsive Design: Built with Tailwind CSS for a mobile-first and responsive design.",
+      "Redux for State Management: Manage global state using Redux (e.g., cart, wishlist, authentication)"
     ],
-    img: netflix,
+    img: Myshopee,
 
-    github: "https://github.com/abhisheks7070/Netflix-clone/tree/main",
-    live: "https://netflix-clone-8j12.onrender.com",
+    github: "https://github.com/abhisheks7070/e-commerce",
+    live: "https://myshopee-x5ih.onrender.com",
 
 
   },
