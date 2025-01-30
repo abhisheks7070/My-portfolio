@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import { motion } from 'framer-motion';
 import wallet from '../assets/wallet-app.png';
 import insurance from '../assets/insurance.png';
 import Myshopee from '../assets/Myshopee.png';
+
 
 const projects = [
   {
@@ -57,7 +56,7 @@ const projects = [
 
 
   },
-];
+]
 
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -70,175 +69,56 @@ const Projects = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        when: "beforeChildren",
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const projectVariants = {
-    hidden: { x: 100, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: { duration: 0.5 }
-    },
-    exit: {
-      x: -100,
-      opacity: 0,
-      transition: { duration: 0.5 }
-    }
-  };
-
   return (
-    <motion.section
-      id="projects"
-      className="bg-slate-700 p-8"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={containerVariants}
-    >
+    <section id="projects" className="bg-slate-700 p-8">
       <div className="container mx-auto text-center">
-        <motion.h2
-          className="head text-slate-300 text-3xl font-bold mb-8"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Projects
-        </motion.h2>
+        <h2 className="head text-slate-300 text-3xl font-bold mb-8">Projects</h2>
         <div className="relative">
           <div className="text-black text-start overflow-x-auto whitespace-nowrap flex">
             {projects.map((project, index) => (
-              <motion.div
+              <div
                 key={index}
                 className={`mx-auto w-[80vw] h-auto bg-gray-300 p-4 rounded-xl shadow-lg inline-block ${
                   index === currentIndex ? 'block' : 'hidden'
-                }`}
-                variants={projectVariants}
-                initial="hidden"
-                animate={index === currentIndex ? "visible" : "hidden"}
-                exit="exit"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
+                } `}
               >
-                <motion.h3
-                  className="mdtext-3xl text-2xl font-bold mb-5 text-center text-wrap"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  {project.title}
-                </motion.h3>
-                <motion.img
-                  src={project.img}
-                  alt={project.title}
-                  className="mx-auto border-solid border-4 border-black w-auto h-auto object-fill rounded-xl mb-4"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                />
-                <motion.div
-                  className="text-xl md:text-2xl font-bold mb-2 text-wrap underline decoration-solid"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.3 }}
-                >
-                  Description:
-                </motion.div>
-                <motion.p
-                  className="text-l md:text-xl mb-5 text-wrap"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.4 }}
-                >
-                  {project.desc}
-                </motion.p>
-                <motion.div
-                  className="text-xl md:text-2xl font-bold mb-2 text-wrap underline decoration-solid"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  Features:
-                </motion.div>
-                <motion.ul className="list-disc list-inside text-l md:text-xl text-wrap">
-                  {project.features.map((feature, idx) => (
-                    <motion.li
-                      key={idx}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.6 + idx * 0.1 }}
-                    >
-                      {feature}
-                    </motion.li>
-                  ))}
-                </motion.ul>
-                <motion.div
-                  className="mt-4 flex justify-center space-x-4"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8 }}
-                >
-                  <motion.a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-slate-800 w-fit px-5 py-1 rounded-full text-l md:text-xl text-blue-300 hover:underline"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    GitHub
-                  </motion.a>
-                  <motion.a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-slate-800 w-fit px-5 py-1 rounded-full text-l md:text-xl text-blue-300 hover:underline"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Live
-                  </motion.a>
-                </motion.div>
-              </motion.div>
+                <h3 className="mdtext-3xl text-2xl font-bold mb-5 text-center text-wrap">{project.title}</h3>
+                <img src={project.img} alt={project.title} className="mx-auto order-solid border-4 border-black w-auto h-auto object-fill rounded-xl mb-4" />
+                <div className='text-xl md:text-2xl font-bold mb-2 text-wrap underline decoration-solid'>Description: </div>
+                <p className="text-l md:text-xl mb-5 text-wrap ">{project.desc}</p>
+                <div className='text-xl md:text-2xl font-bold mb-2 text-wrap underline decoration-solid'>Features:</div>
+                <ul className='list-disc list-inside text-l md:text-xl text-wrap'>
+                  {
+                    project.features.map((feature, index) => {
+                      return (
+                        <li key={index}>{feature}</li>
+                      )
+                    })
+                  }
+                </ul>
+                <div className=" mt-4 flex justify-center space-x-4 ">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="bg-slate-800 w-fit px-5 py-1 rounded-full text-l md:text-xl text-blue-300 hover:underline">GitHub</a>
+                  <a href={project.live} target="_blank" rel="noopener noreferrer" className="bg-slate-800 w-fit px-5 py-1 rounded-full text-l md:text-xl text-blue-300 hover:underline">Live</a>
+                </div>
+              </div>
             ))}
           </div>
-          <motion.div
-            className="absolute top-1/2 transform -translate-y-1/2 left-[-5vw]"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <button
-              onClick={handlePrev}
-              className="bg-slate-800 text-white p-2 rounded-full hover:bg-slate-900"
-            >
+          <div className="absolute top-1/2 transform -translate-y-1/2 left-[-5vw]">
+            <button onClick={handlePrev} className="bg-slate-800 text-white p-2 rounded-full hover:bg-slate-900">
               <FaArrowLeft />
             </button>
-          </motion.div>
-          <motion.div
-            className="absolute top-1/2 transform -translate-y-1/2 right-[-5vw]"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <button
-              onClick={handleNext}
-              className="bg-slate-800 text-white p-2 rounded-full hover:bg-slate-900"
-            >
+          </div>
+          <div className="absolute top-1/2 transform -translate-y-1/2 right-[-5vw]">
+            <button onClick={handleNext} className="bg-slate-800 text-white p-2 rounded-full hover:bg-slate-900">
               <FaArrowRight />
             </button>
-          </motion.div>
+          </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
 export default Projects;
+
+
