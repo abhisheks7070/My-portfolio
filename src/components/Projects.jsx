@@ -84,8 +84,8 @@ const Projects = () => {
                   } `}
               >
                 <h3 className="md:text-3xl text-2xl font-bold mb-5 text-center text-wrap">{index+1}. {project.title}</h3>
-                <div className='aspect-3/2 md:w-[40vw] md:h-[50vh] mx-auto order-solid border-4 overflow-hidden border-black rounded-xl mb-4   '>
-                  <img src={project.img} alt={project.title} className="mx-auto w-full h-full a object-fill rounded-xl mb-4" />
+                <div className='md:w-[40vw] md:h-[25vw] w-70vw h-50vh mx-auto order-solid border-4 overflow-hidden border-black rounded-xl mb-4   '>
+                  <img src={project.img} alt={project.title} className="mx-auto w-full h-full object-fill rounded-xl" />
 
                 </div>
                 <div className='text-xl md:text-4xl font-bold mb-2 text-wrap underline decoration-solid'>Description: </div>

@@ -40,7 +40,7 @@ const About = () => {
     };
 
     return (
-        <section id="about" className="bg-slate-700 p-8 overflow-hidden min-h-screen">
+        <section id="about" className="bg-slate-700 p-8 overflow-hidden h-auto">
             <motion.h2 
                 className="head text-slate-300 text-3xl font-bold mx-auto text-center mb-8"
                 initial={{ opacity: 0, y: -20 }}

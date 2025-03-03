@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <motion.section
       id="home"
-      className="bg-slate-900 p-8 flex flex-col md:flex-row gap-5 md:gap-0 justify-between text-center items-center min-h-screen"
+      className="bg-slate-900 p-8 flex flex-col md:flex-row gap-5 md:gap-0 justify-between text-center items-center md:min-h-screen h-auto"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}

@@ -105,7 +105,7 @@ const AnimatedSkillCard = ({ skill }) => {
     <motion.div
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="bg-slate-400 rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow w-[23vw]"
+      className="bg-slate-400 rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow md:w-[23vw] w-auto"
     >
       <h3 className="md:text-3xl text-2xl font-semibold capitalize mb-3 text-slate-900">{skill.title}</h3>
       <div className="flex flex-wrap gap-3 justify-around">
@@ -131,7 +131,7 @@ const Skills = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       id="skills"
-      className="bg-slate-900 p-8 mx-auto text-center min-h-screen"
+      className="bg-slate-900 p-8 m-auto text-center h-auto "
     >
       <motion.h2
         variants={headingVariants}
