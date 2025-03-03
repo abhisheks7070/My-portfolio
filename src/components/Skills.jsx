@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import SkillCard from "./SkillCard";
 import { BiLogoHtml5, BiLogoCss3, BiLogoJavascript } from 'react-icons/bi';
 import { FaNodeJs, FaReact } from 'react-icons/fa';
-import { SiMongodb, SiMysql, SiTailwindcss, SiThealgorithms, SiDebian, SiPostgresql } from 'react-icons/si';
+import { SiMongodb, SiMysql, SiTailwindcss, SiThealgorithms, SiDebian, SiPostgresql, SiExpress } from 'react-icons/si';
 
 // Animation variants
 const containerVariants = {
@@ -45,23 +45,23 @@ const skills = [
         title: "frontend",
         items: [
             {
-                logo: <BiLogoHtml5 className="text-2xl" />,
+                logo: <BiLogoHtml5 className="md:text-4xl text-2xl" />,
                 name: "HTML"
             },
             {
-                logo: <BiLogoCss3 className="text-2xl" />,
+                logo: <BiLogoCss3 className="md:text-4xl text-2xl" />,
                 name: "CSS"
             },
             {
-                logo: <BiLogoJavascript className="text-2xl" />,
+                logo: <BiLogoJavascript className="md:text-4xl text-2xl" />,
                 name: "JavaScript"
             },
             {
-                logo: <FaReact className="text-2xl" />,
+                logo: <FaReact className="md:text-4xl text-2xl" />,
                 name: "React"
             },
             {
-                logo: <SiTailwindcss className="text-2xl" />,
+                logo: <SiTailwindcss className="md:text-4xl text-2xl" />,
                 name: "TailwindCSS"
             }
         ]
@@ -70,24 +70,29 @@ const skills = [
         title: "backend",
         items: [
             {
-                logo: <FaNodeJs className="text-2xl" />,
+                logo: <FaNodeJs className="md:text-4xl text-2xl" />,
                 name: "NodeJS"
-            }
+            },
+            {
+                logo: <SiExpress className="md:text-4xl text-2xl" />,
+                name: "ExpressJS"
+            },
+
         ]
     },
     {
         title: "database",
         items: [
             {
-                logo: <SiMongodb className="text-2xl" />,
+                logo: <SiMongodb className="md:text-4xl text-2xl" />,
                 name: "MongoDB"
             },
             {
-                logo: <SiPostgresql className="text-2xl" />,
+                logo: <SiPostgresql className="md:text-4xl text-2xl" />,
                 name: "Postgres"
             },
             {
-                logo: <SiMysql className="text-2xl" />,
+                logo: <SiMysql className="md:text-4xl text-2xl" />,
                 name: "MySQL"
             }
         ]
@@ -100,17 +105,17 @@ const AnimatedSkillCard = ({ skill }) => {
     <motion.div
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow"
+      className="bg-slate-400 rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow w-[23vw]"
     >
-      <h3 className="text-xl font-semibold capitalize mb-3">{skill.title}</h3>
-      <div className="flex flex-wrap gap-3 justify-center">
+      <h3 className="md:text-3xl text-2xl font-semibold capitalize mb-3 text-slate-900">{skill.title}</h3>
+      <div className="flex flex-wrap gap-3 justify-around">
         {skill.items.map((item, index) => (
           <motion.div
             key={item.name}
             whileHover={{ y: -5 }}
-            className="flex flex-col items-center gap-1"
+            className="flex flex-col items-center md:gap-3 gap-1"
           >
-            {item.logo}
+            <div>{item.logo}</div>
             <span className="text-sm">{item.name}</span>
           </motion.div>
         ))}
@@ -155,7 +160,7 @@ const Skills = () => {
           className="skills-left-content w-full md:w-1/2 text-black"
         >
           <motion.div 
-            className="w-fit mx-auto flex flex-wrap items-normal gap-5 justify-center"
+            className="w-fit mx-auto flex flex-col flex-wrap items-normal gap-5 justify-around "
           >
             {skills.map((skill) => (
               <motion.div

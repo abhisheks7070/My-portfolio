@@ -40,7 +40,7 @@ const About = () => {
     };
 
     return (
-        <section id="about" className="bg-slate-700 p-8 overflow-hidden">
+        <section id="about" className="bg-slate-700 p-8 overflow-hidden min-h-screen">
             <motion.h2 
                 className="head text-slate-300 text-3xl font-bold mx-auto text-center mb-8"
                 initial={{ opacity: 0, y: -20 }}
@@ -62,7 +62,7 @@ const About = () => {
                     variants={itemVariants}
                 >
                     <motion.p 
-                        className="text-xl text-slate-300"
+                        className="md:text-3xl text-xl text-slate-300"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.5 }}

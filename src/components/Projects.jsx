@@ -2,29 +2,30 @@ import React, { useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import wallet from '../assets/wallet-app.png';
 import insurance from '../assets/insurance.png';
-import Myshopee from '../assets/Myshopee.png';
+import taskManager from '../assets/task_manager.png';
 
 
 const projects = [
   {
-    title: "1.Insurance Website",
-    desc: "This project is an insurance website built using the MERN stack (MongoDB, Express.js, React.js, Node.js). The website provides information about the insurance company and allows users to make inquiries by submitting their details. The submitted inquiries are sent to a backend created using Express.js and stored in a MongoDB database. There is also a frontend for agents that can be accessed only by entering a specific agent code.",
+    title: "Task manager",
+    desc: "The Task Manager is a full-stack web application built using the MERN stack (MongoDB, Express.js, React.js, Node.js) and redux toolkit for stete management. It allows users to manage tasks based on their roles (Admin, HR, Employee). The application includes features like user authentication, role-based access control, task creation, task management, and task status tracking.",
     features: [
-      "Provides information about the insurance company.",
-      "Users can make inquiries by submitting their details through a contact form.",
-      "The contact form data is sent to the backend and stored in a MongoDB database.",
-      "Restricted access to Agent website.",
-      "Agent website can be accesed only by entering a specific agent code in the user website.",
-      "Provides additional functionalities for agents (e.g., viewing inquiries, managing user data)."
-    ],
-    img: insurance,
 
-    github: "https://github.com/abhisheks7070/Insurance_company_Full-stack",
-    live: "https://pankaj-singh.onrender.com/",
+      "Login with JWT (JSON Web Tokens) for secure authentication and Role-based access control (Admin, HR, Employee)",
+      "Seperate Dashboard for ADMIN: Create tasks, manage submitted tasks (accept/reject), EMPLOYEE: Accept tasks, update task status (new → active → submitted), and HR:  Create new users.",
+      "Task status: new_task, active_task, submitted_task, completed_task, only Admin can create tasks and manage submitted tasks and Employees can accept tasks and submit them.",
+      "Redux Toolkit for global state management and Redux Thunk for handling asynchronous actions (e.g., fetching data).",
+      "MongoDB for storing user and task data."
+    ],
+    img: taskManager,
+
+    github: "https://github.com/abhisheks7070/task_manager_frontend",
+    live: "https://task-manager-frontend-bay.vercel.app/",
+
 
   },
   {
-    title: "2.myWALLET App",
+    title: "myWALLET App",
     desc: "This is a Dummy payment website built using Express.js for the server runtime, MongoDB for the database, React for the frontend, Node.js for the backend, and JWT tokens for authentication. The application allows users to create an account, sign in, check their balance, and transfer money to other existing users.",
     features: [
       "User Account Creation: Users can create an account with their details.",
@@ -41,19 +42,20 @@ const projects = [
 
   },
   {
-    title: "E-commerece Website",
-    desc: "This is a prototype full-stack e-commerce web application built using the MERN stack (MongoDB, Express, React, and Node.js) with JWT authentication for secure login and Redux for state management. The app allows users to browse products, add them to their cart, make purchases.",
+    title: "Insurance Website",
+    desc: "This project is an insurance website built using the MERN stack (MongoDB, Express.js, React.js, Node.js). The website provides information about the insurance company and allows users to make inquiries by submitting their details. The submitted inquiries are sent to a backend created using Express.js and stored in a MongoDB database. There is also a frontend for agents that can be accessed only by entering a specific agent code.",
     features: [
-
-      "User Authentication: Register, login, and manage user sessions with JWT-based authentication.",
-      "Responsive Design: Built with Tailwind CSS for a mobile-first and responsive design.",
-      "Redux for State Management: Manage global state using Redux (e.g., cart, wishlist, authentication)"
+      "Provides information about the insurance company.",
+      "Users can make inquiries by submitting their details through a contact form.",
+      "The contact form data is sent to the backend and stored in a MongoDB database.",
+      "Restricted access to Agent website.",
+      "Agent website can be accesed only by entering a specific agent code in the user website.",
+      "Provides additional functionalities for agents (e.g., viewing inquiries, managing user data)."
     ],
-    img: Myshopee,
+    img: insurance,
 
-    github: "https://github.com/abhisheks7070/e-commerce",
-    live: "https://myshopee-x5ih.onrender.com",
-
+    github: "https://github.com/abhisheks7070/Insurance_company_Full-stack",
+    live: "https://pankaj-singh.onrender.com/",
 
   },
 ]
@@ -70,24 +72,26 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="bg-slate-700 p-8">
-      <div className="container mx-auto text-center">
+    <section id="projects" className="bg-slate-700 p-8 min-h-screen">
+      <div className="container mx-auto text-center ">
         <h2 className="head text-slate-300 text-3xl font-bold mb-8">Projects</h2>
-        <div className="relative">
+        <div className="relative bg-gray-500 rounded-2xl">
           <div className="text-black text-start overflow-x-auto whitespace-nowrap flex">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className={`mx-auto w-[80vw] h-auto bg-gray-300 p-4 rounded-xl shadow-lg inline-block ${
-                  index === currentIndex ? 'block' : 'hidden'
-                } `}
+                className={`mx-auto w-[80vw] h-auto p-4 rounded-xl shadow-lg inline-block ${index === currentIndex ? 'block' : 'hidden'
+                  } `}
               >
-                <h3 className="mdtext-3xl text-2xl font-bold mb-5 text-center text-wrap">{project.title}</h3>
-                <img src={project.img} alt={project.title} className="mx-auto order-solid border-4 border-black w-auto h-auto object-fill rounded-xl mb-4" />
-                <div className='text-xl md:text-2xl font-bold mb-2 text-wrap underline decoration-solid'>Description: </div>
-                <p className="text-l md:text-xl mb-5 text-wrap ">{project.desc}</p>
-                <div className='text-xl md:text-2xl font-bold mb-2 text-wrap underline decoration-solid'>Features:</div>
-                <ul className='list-disc list-inside text-l md:text-xl text-wrap'>
+                <h3 className="md:text-3xl text-2xl font-bold mb-5 text-center text-wrap">{index+1}. {project.title}</h3>
+                <div className='aspect-3/2 md:w-[40vw] md:h-[50vh] mx-auto order-solid border-4 overflow-hidden border-black rounded-xl mb-4   '>
+                  <img src={project.img} alt={project.title} className="mx-auto w-full h-full a object-fill rounded-xl mb-4" />
+
+                </div>
+                <div className='text-xl md:text-4xl font-bold mb-2 text-wrap underline decoration-solid'>Description: </div>
+                <p className="text-lg md:text-3xl mb-5 text-wrap ">{project.desc}</p>
+                <div className='text-xl md:text-4xl font-bold mb-2 text-wrap underline decoration-solid'>Features:</div>
+                <ul className='list-disc list-inside text-l md:text-3xl text-wrap'>
                   {
                     project.features.map((feature, index) => {
                       return (

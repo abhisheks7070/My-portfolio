@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import emailjs from "emailjs-com";
+import dotenv from "dotenv"
+
+// dotenv.config({path:"../.env"})
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,31 +23,36 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit =async  (e) => {
     e.preventDefault();
-    setStatusMessage('Your message has been sent successfully!');
-    try {
-      const response = await axios.post('https://ps-backend-d5jt.onrender.com/contact', formData, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      console.log('Success:', response.data);
-      // Reset the form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-      });
-    } catch (error) {
-      console.error('Error:', error);
-      setStatusMessage('An error occurred. Please try again.');
-    }
+console.log((import.meta.env.VITE_SERVICE_ID), import.meta.env.VITE_TEMPLATE_ID, import.meta.env.VITE_USER_ID)
+    // Replace with your EmailJS service ID, template ID, and user ID
+    const serviceID = "service_4j1aemh";
+    const templateID = "template_84y6kdj";
+    const userID = "09mvqdah_urRSaGrL";
+    console.log(typeof(serviceID))
+try {
+  
+  const response =  await emailjs.send(serviceID, templateID, formData, userID)
+     
+       console.log("Email sent successfully!", response);
+       alert("Message sent successfully!");
+       setFormData({
+         name: '',
+         email: '',
+         phone: '',
+         message: ''
+       }); // Clear form
+} catch (error) {
+  
+  console.error("Failed to send email:", error);
+  alert("Failed to send message. Please try again.");
+}
+      
   };
 
   return (<>
-    <section id="contact" className="bg-slate-900 p-8">
+    <section id="contact" className="bg-slate-900 p-8 ">
       <h2 className="head text-slate-300 text-3xl font-bold mx-auto text-center">Contact</h2>
       <p className="mt-4 md:mt-9 text-base md:text-xl text-center">Reach out to us for creating a website or enquires.</p>
       <form className="text-black form mt-8 max-w-xl mx-auto space-y-4" onSubmit={handleSubmit}>
