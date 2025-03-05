@@ -19,7 +19,7 @@ const projects = [
     ],
     img: taskManager,
 
-    github: "https://github.com/abhisheks7070/task_manager_frontend",
+    // github: "https://github.com/abhisheks7070/task_manager_frontend",
     live: "https://task-manager-frontend-bay.vercel.app/",
 
 
