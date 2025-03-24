@@ -131,11 +131,11 @@ const Skills = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       id="skills"
-      className="bg-slate-900 p-8 m-auto text-center h-auto "
+      className="bg-gradient-to-b from-gray-700 via-blue-900 to-slate-900 p-8 m-auto text-center h-auto "
     >
       <motion.h2
         variants={headingVariants}
-        className="head text-slate-300 text-3xl font-bold mb-12"
+        className="text-4xl md:text-5xl font-bold text-center mb-16 text-white"
       >
         Skills
       </motion.h2>

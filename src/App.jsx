@@ -30,7 +30,7 @@ function App() {
 
 
   return (
-    <div className="flex flex-col min-h-screen w-screen relative overflow-hidden">
+    <div className="flex flex-col min-h-screen w-screen relative overflow-hidden font-mono">
       <Header />
       <main className="flex-grow">
         <Home />

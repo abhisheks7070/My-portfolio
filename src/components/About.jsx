@@ -40,9 +40,9 @@ const About = () => {
     };
 
     return (
-        <section id="about" className="bg-slate-700 p-8 overflow-hidden h-auto">
+        <section id="about" className="bg-gradient-to-b from-gray-700 via-red-900 to-gray-900 p-8 overflow-hidden h-auto">
             <motion.h2 
-                className="head text-slate-300 text-3xl font-bold mx-auto text-center mb-8"
+                className="head text-4xl md:text-5xl font-bold text-center mb-16 text-white mx-auto "
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}

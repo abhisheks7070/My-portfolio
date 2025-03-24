@@ -52,8 +52,8 @@ try {
   };
 
   return (<>
-    <section id="contact" className="bg-slate-900 p-8 ">
-      <h2 className="head text-slate-300 text-3xl font-bold mx-auto text-center">Contact</h2>
+    <section id="contact" className="bg-gradient-to-b from-gray-700 via-gray-600 to-gray-900 p-8 ">
+      <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">Contact</h2>
       <p className="mt-4 md:mt-9 text-base md:text-xl text-center">Reach out to us for creating a website or enquires.</p>
       <form className="text-black form mt-8 max-w-xl mx-auto space-y-4" onSubmit={handleSubmit}>
         <input
