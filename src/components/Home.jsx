@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <motion.section
       id="home"
-      className="relative p-8 text-center items-center md:min-h-screen h-auto flex"
+      className="relative p-8 text-center items-center min-h-screen h-auto flex"
       // className="bg-gradient-to-b from-gray-700 via-yellow-900 to-gray-900 p-8 flex flex-col md:flex-row gap-5 md:gap-0 justify-between text-center items-center md:min-h-screen h-auto"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +50,7 @@ const Home = () => {
         <h1 className="text-2xl md:text-6xl font-extrabold mb-2 md:mb-4 transition-colors duration-300">
           WELCOME
         </h1>
-        <p className="md:text-3xl text-xl font-bold transition-colors duration-300">
+        <p className="md:text-3xl text-base font-bold transition-colors duration-300">
           I am a web developer passionate about creating dynamic and engaging online experiences. With a commitment to continuous learning and a keen eye for detail, I strive to bring innovative ideas to life through clean and efficient code. Explore my work and join me on this exciting web development journey.
         </p>
       </motion.div>
