@@ -47,10 +47,10 @@ const Home = () => {
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.4 }}
       >
-        <h1 className="text-2xl md:text-6xl font-extrabold mb-2 md:mb-4 transition-colors duration-300">
+        <h1 className="text-2xl md:text-4xl lg:text-6xl font-extrabold mb-2 md:mb-4 transition-colors duration-300">
           WELCOME
         </h1>
-        <p className="md:text-3xl text-base font-bold transition-colors duration-300">
+        <p className="text-base md:text-2xl lg:text-4xl font-bold transition-colors duration-300">
           I am a web developer passionate about creating dynamic and engaging online experiences. With a commitment to continuous learning and a keen eye for detail, I strive to bring innovative ideas to life through clean and efficient code. Explore my work and join me on this exciting web development journey.
         </p>
       </motion.div>

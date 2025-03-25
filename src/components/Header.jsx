@@ -44,7 +44,7 @@ const Header = () => {
         <li><a href="#projects" className="px-2 hover:bg-gray-500 hover:rounded-xl">Projects</a></li>
         <li><a href="#contact" className="px-2 hover:bg-gray-500 hover:rounded-xl">Contact</a></li>
       </ul> */}
-      <ul className={`transition-all duration-500 navbar text-white text-xs md:text-2xl font-bold md:gap-9 z-50 flex fixed top-0 items-start p-2 md:p-4 w-screen bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900`}>
+      <ul className={`transition-all duration-500 navbar text-white text-xs sm:text-sm md:text-2xl lg:text-4xl font-bold md:gap-9 z-50 flex fixed top-0 items-start p-2 md:p-4 w-screen bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900`}>
         <li><a href="#home" className="px-2 hover:bg-gray-500 hover:rounded-xl">Home</a></li>
         <li><a href="#about" className="px-2 hover:bg-gray-500 hover:rounded-xl">About</a></li>
         <li><a href="#skills" className="px-2 hover:bg-gray-500 hover:rounded-xl">Skills</a></li>
