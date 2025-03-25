@@ -64,20 +64,39 @@ const Projects = () => {
 
     },
   ]
-  const [currentIndex, setCurrentIndex] = useState(0);
 
-  // const handleNext = () => {
-  //   setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
-  // };
+  const containerRef = useRef(null);
+  const childRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [mainWidth, setMainWidth] = useState(0);
+  const [childWidth, setChildWidth] = useState(0);
+  
+ 
+  // Update active index on scroll
+ 
+  useEffect(() => {
 
-  // const handlePrev = () => {
-  //   setCurrentIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
-  // };
+    setMainWidth(containerRef.current.clientWidth)
+    setChildWidth(childRef.current.clientWidth)
 
+    const container = containerRef.current
+    if (!container) return;
+    const handleScroll = () => {
+      const containerWidth = containerRef.current.clientWidth;
+      const scrollPosition = containerRef.current.scrollLeft;
+      const newIndex = Math.round(scrollPosition / containerWidth);
+      setActiveIndex(newIndex);
+    };
+    
+    container.addEventListener('scroll', handleScroll);
+    return () => container.removeEventListener('scroll', handleScroll);
+  }, []);
+  
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
 
+  
   useEffect(() => {
     if (isInView) {
       mainControls.start("visible");
@@ -102,13 +121,14 @@ const Projects = () => {
           Featured Projects
         </motion.h2>
 
-        <div className="xl:grid flex grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 font-serif overflow-x-auto">
+        <div className="xl:grid flex grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 font-serif overflow-x-auto hide-scrollbar" style={{ scrollbarWidth: 'none' }}  ref={containerRef}>
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-gradient-to-b from-yellow-700 via-yellow-800 to-yellow-950 rounded-xl overflow-hidden shadow-lg hover:shadow-xl hover:scale-125 transition-shadow duration-300 p-5 h-fit w-[90vw] lg:w-[45vw] xl:w-auto shrink-0"
+              className="bg-gradient-to-b from-yellow-700 via-yellow-800 to-yellow-950 rounded-xl overflow-hidden shadow-lg hover:shadow-xl hover:scale-125 transition-shadow duration-300 p-5 h-fit w-[90vw]  xl:w-auto shrink-0"
               initial={{ opacity: 0, y: 50 }}
               animate={mainControls}
+              ref={childRef}
               variants={{
                 visible: {
                   opacity: 1,
@@ -160,6 +180,28 @@ const Projects = () => {
             </motion.div>
           ))}
         </div>
+        <div className="flex justify-center mt-4 gap-2">
+        {mainWidth < childWidth*1.8 && projects.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => {
+              const container = containerRef.current;
+              if (container) {
+                container.scrollTo({
+                  left: index * container.clientWidth,
+                  behavior: 'smooth',
+                });
+              }
+            }}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === activeIndex
+                ? 'bg-blue-600 scale-125' // Active dot (scaled up)
+                : 'bg-gray-300' // Inactive dot
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
       </div>
 
     </section>
